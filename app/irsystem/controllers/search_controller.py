@@ -11,7 +11,7 @@ def search():
 	if query:
 		data = query
 	else:
-		data = []
+		data = ""
 	# console.log(query)
 	# if not query:
 	# 	data = []
