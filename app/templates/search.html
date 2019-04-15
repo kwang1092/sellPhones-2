@@ -40,11 +40,16 @@
 
       </svg>
     </svg>
+
     {% if data %}
-        <h1>{{data}}</h1>
+      <meta id="my-data" data-playlist="{{ data }}">
+      <h1>{{data}}</h1>
     {% endif %}
   </div>
   <script>
+  let get_request = 0;
+  var playlist_data = $('#my-data').data("data");
+
   let clicked = 0;
   function setup(){
     let svg = d3.select("#pink_section")
@@ -192,7 +197,12 @@
     return false;
 
   }
+
   setup();
+  if(playlist_data){
+    move_svg();
+  }
+
 </script>
 <!-- <div id="main_options">
 
