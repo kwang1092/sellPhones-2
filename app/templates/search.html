@@ -49,8 +49,10 @@
   </div>
   <script>
   let get_request = 0;
-  var playlist_data = $('#my-data').data("data");
-  console.log(alert("{{data}}"));
+  var playlist_data = $('#my-data').data("data-playlist");
+  // console.log(alert("{{data}}"));
+  console.log(playlist_data);
+  console.log("{{data}}")
 
   let clicked = 0;
   function setup(){
