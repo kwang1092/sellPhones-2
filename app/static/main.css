@@ -8,7 +8,7 @@
 padding: 20px 0;
 text-align:center;
 } */
-body {
+/* body {
 padding-top: 15%;
 padding-bottom: 15px;
 }
@@ -23,7 +23,7 @@ width:500px;
 display:inline-block;
 margin-bottom:0;
 }
-}
+
 .topcorner{
 position:absolute;
 top:2%;
@@ -35,7 +35,7 @@ border: none
 }
 .step-links a{
 color: #4285F4;
-}
+} */
 
 
 #main_options{
