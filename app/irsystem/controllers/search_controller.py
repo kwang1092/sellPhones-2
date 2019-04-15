@@ -8,7 +8,7 @@ net_id = "Alvin Qu: aq38, Andrew Xu: ax28, Kevin Wang: kw534, Samuel Han: sh779"
 @irsystem.route('/', methods=['GET'])
 def search():
 	query = request.args.get('condition')
-	console.log(query)
+	# console.log(query)
 	# if not query:
 	# 	data = []
 	# 	output_message = ''
