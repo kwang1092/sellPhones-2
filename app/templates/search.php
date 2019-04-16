@@ -227,6 +227,7 @@
     svg.append("g")
     .append("text")
     .text("sellPhones")
+    .attr("id","asdf")
     .attr("class","svg_text")
     .attr("font-family", "Roboto")
     .attr("font-size", "55px")
@@ -235,6 +236,17 @@
     .attr("dominantBaseline","middle")
     .attr("x",width)
     .attr("y",90);
+
+    var dummyElement = document.createElement("div");
+    dummyElement.innerHTML = '<a xlink:href="/" style="cursor: pointer"></a>';
+
+    var htmlAnchorElement = dummyElement.querySelector("a");
+
+    var circleSVG = document.getElementById("asdf");
+
+    htmlAnchorElement.innerHTML = circleSVG.innerHTML;
+
+    circleSVG.innerHTML = dummyElement.innerHTML;
 
 
 
