@@ -22,7 +22,7 @@
             <div id="condition_radios">
               <label style="font-family:Roboto;fill:gray;margin-left:15%;">
                 <span class="radio">
-                  <input class="inputs" type="radio" name="condition" value="new" {% if condition =="new" %} checked='checked' {% endif %}>
+                  <input class="inputs" type="radio" name="condition" value="new" {% if condition =="new" %} checked='checked' {% endif %} required>
                   <span class="radio-value" aria-hidden="true"></span>
                 </span>
                 newer
@@ -36,8 +36,8 @@
               </label>
             </div>
             <div id="budget_options" class="custom-select" style="width:200px;">
-              <select name="budgets">
-                <option value="0">Select a Budget</option>
+              <select name="budgets" required>
+                <option value="">Select a Budget</option>
                 <option value="1">$0-$199</option>
                 <option value="2">$200-$399</option>
                 <option value="3">$400-$599</option>
@@ -47,7 +47,7 @@
                 <option value="7">$1200+</option>
               </select>
             </div>
-            <div id="feature_options">
+            <div id="feature_options" style="width:500px;text-align:center">
               <table>
                 <tr>
                   <td>Thinness</td>
@@ -236,6 +236,8 @@
     .attr("x",width)
     .attr("y",90);
 
+
+
     svg.append("g")
     .append("text")
     .text("condition")
@@ -374,6 +376,11 @@
 
   function move_svg(){
 
+    d3.select("#feature_options")
+        .transition()
+        .duration(300)
+        .style("width", 400 + 'px');
+
     d3.select(".line2")
     .transition()
     .duration(300)
@@ -411,21 +418,36 @@
     if(names.length > 0){
       for(let i = 0; i < Math.min(6,names.length); i++){
         d3.select("#blue_section").append('text')
+          .attr("class","image_text")
           .text(i+1 + ") " + names[i])
           .attr("font-family", "Roboto")
           .attr("font-size", "16px")
           .attr("fill","gray")
+          .style("opacity",0)
           .attr("x",i%3*30+5 + "%")
           .attr("y",Math.floor((i/3))%2*40+20 + "%");
 
         d3.select("#blue_section").append('image')
+          .attr("class","image_text")
           .attr('xlink:href', urls[i])
           .attr('width', 200)
           .attr('height', 200)
+          .style("opacity",0)
           .attr('x', i%3*30+10 + "%")
           .attr('y', Math.floor((i/3))%2*40+25 + "%");
       }
+      d3.selectAll(".image_text")
+      .transition()
+      .style("opacity",1)
+      .delay(300);
+
+
+
+
     }
+
+
+
 
     clicked = 1;
     setTimeout(function() { fill_blue(); }, 300);
@@ -435,6 +457,9 @@
 
   function fast_move_svg(){
 
+    d3.select("#feature_options")
+        .style("width", 400 + 'px');
+
     d3.select(".line2")
     .attr("x1","60%");
 
@@ -460,21 +485,29 @@
     if(names.length > 0){
       for(let i = 0; i < Math.min(6,names.length); i++){
         d3.select("#blue_section").append('text')
+          .attr("class","image_text")
           .text(i+1 + ") " + names[i])
           .attr("font-family", "Roboto")
           .attr("font-size", "16px")
           .attr("fill","gray")
+          .style("opacity",0)
           .attr("x",i%3*30+5 + "%")
           .attr("y",Math.floor((i/3))%2*40+20 + "%");
 
         d3.select("#blue_section").append('image')
+          .attr("class","image_text")
           .attr('xlink:href', urls[i])
           .attr('width', 200)
           .attr('height', 200)
+          .style("opacity",0)
           .attr('x', i%3*30+10 + "%")
           .attr('y', Math.floor((i/3))%2*40+25 + "%");
       }
     }
+    d3.selectAll(".image_text")
+    .transition()
+    .style("opacity",1)
+    .delay(300);
 
     clicked = 1;
     setTimeout(function() { fill_blue(); }, 300);
