@@ -13,11 +13,8 @@
   <!-- <form class="form-inline global-search"> -->
   <div class="container">
     <svg class="total" width = "100%" height="680">
-      <svg id="pink_section" width="50%" height ="680" x="25%" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <a href="/"  xlink:type="simple" xlink:show="new">
-        <text id="svgg" x="width" y="90" style="font-family:Roboto; font-size:55px; fill:gray;text-anchor:middle;dominantBaseline:middle;">sellPhones</text>
-      </a>
-        <rect id="rectangle" class="svg_text" x="0" y="0" width="100%" height="680"style="fill:#FFF5ED" rx="20" ry="20" />
+      <svg id="pink_section" width="50%" height ="680" x="25%">
+        <rect id="rectangle" x="0" y="0" width="100%" height="680"style="fill:#FFF5ED" rx="20" ry="20" />
         <foreignObject id="condition_radio" width="100%" height="100%" x="20%" y="185">
           <form method="get">
             <input type = "hidden" name = "past" value = "{{mate}}" />
@@ -227,20 +224,17 @@
     let width = svg.attr("width");
 
 
-    // svg.append("g")
-    // .append("text")
-    // .text("sellPhones")
-    // .attr("class","svg_text")
-    // .attr("id","svgg")
-    // .attr("font-family", "Roboto")
-    // .attr("font-size", "55px")
-    // .attr("fill","gray")
-    // .attr("text-anchor","middle")
-    // .attr("dominantBaseline","middle")
-    // .attr("x",width)
-    // .attr("y",90);
-
-
+    svg.append("g")
+    .append("text")
+    .text("sellPhones")
+    .attr("class","svg_text")
+    .attr("font-family", "Roboto")
+    .attr("font-size", "55px")
+    .attr("fill","gray")
+    .attr("text-anchor","middle")
+    .attr("dominantBaseline","middle")
+    .attr("x",width)
+    .attr("y",90);
 
     svg.append("g")
     .append("text")
