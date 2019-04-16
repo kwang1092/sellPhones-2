@@ -47,7 +47,7 @@
                 <option value="7">$1200+</option>
               </select>
             </div>
-            <div id="feature_options" style="width:500px;text-align:center">
+            <div id="feature_options" style="width:'40%';text-align:center">
               <table>
                 <tr>
                   <td>Thinness</td>
@@ -379,7 +379,7 @@
     d3.select("#feature_options")
         .transition()
         .duration(300)
-        .style("width", 400 + 'px');
+        .style("width", 70 + "%");
 
     d3.select(".line2")
     .transition()
@@ -458,7 +458,9 @@
   function fast_move_svg(){
 
     d3.select("#feature_options")
-        .style("width", 400 + 'px');
+        // .style("text-anchor","middle")
+        // .style("dominantBaseline","middle")
+        .style("width", 70 + "%");
 
     d3.select(".line2")
     .attr("x1","60%");
