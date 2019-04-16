@@ -47,7 +47,7 @@
                 <option value="7">$1200+</option>
               </select>
             </div>
-            <div id="feature_options" style="width:'40%';text-align:center">
+            <div id="feature_options" style="width:'35%';text-align:center">
               <table>
                 <tr>
                   <td>Thinness</td>
