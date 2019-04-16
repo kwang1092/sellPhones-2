@@ -13,8 +13,11 @@
   <!-- <form class="form-inline global-search"> -->
   <div class="container">
     <svg class="total" width = "100%" height="680">
-      <svg id="pink_section" width="50%" height ="680" x="25%">
-        <rect id="rectangle" x="0" y="0" width="100%" height="680"style="fill:#FFF5ED" rx="20" ry="20" />
+      <svg id="pink_section" width="50%" height ="680" x="25%" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <a href="/"  xlink:type="simple" xlink:show="new">
+        <text id="svgg" x="width" y="90" style="font-family:Roboto; font-size:55px; fill:gray;text-anchor:middle;dominantBaseline:middle;">sellPhones</text>
+      </a>
+        <rect id="rectangle" class="svg_text" x="0" y="0" width="100%" height="680"style="fill:#FFF5ED" rx="20" ry="20" />
         <foreignObject id="condition_radio" width="100%" height="100%" x="20%" y="185">
           <form method="get">
             <input type = "hidden" name = "past" value = "{{mate}}" />
@@ -200,7 +203,7 @@
             then close all select boxes:*/
             document.addEventListener("click", closeAllSelect);
             </script>
-            <button id="button_svg" width="100%" height="100%" type="submit" class="button">Click Me</button>
+            <button id="button_svg" width="100%" height="100%" type="submit" class="button">Submit</button>
           </form>
         </foreignObject>
       </svg>
@@ -224,17 +227,20 @@
     let width = svg.attr("width");
 
 
-    svg.append("g")
-    .append("text")
-    .text("sellPhones")
-    .attr("class","svg_text")
-    .attr("font-family", "Roboto")
-    .attr("font-size", "55px")
-    .attr("fill","gray")
-    .attr("text-anchor","middle")
-    .attr("dominantBaseline","middle")
-    .attr("x",width)
-    .attr("y",90);
+    // svg.append("g")
+    // .append("text")
+    // .text("sellPhones")
+    // .attr("class","svg_text")
+    // .attr("id","svgg")
+    // .attr("font-family", "Roboto")
+    // .attr("font-size", "55px")
+    // .attr("fill","gray")
+    // .attr("text-anchor","middle")
+    // .attr("dominantBaseline","middle")
+    // .attr("x",width)
+    // .attr("y",90);
+
+
 
     svg.append("g")
     .append("text")
@@ -409,11 +415,11 @@
     urls = {{urls | tojson}};
 
     if(names.length > 0){
-      for(let i = 0; i < 6; i++){
+      for(let i = 0; i < Math.min(6,names.length); i++){
         d3.select("#blue_section").append('text')
           .text(i+1 + ") " + names[i])
           .attr("font-family", "Roboto")
-          .attr("font-size", "20px")
+          .attr("font-size", "16px")
           .attr("fill","gray")
           .attr("x",i%3*30+5 + "%")
           .attr("y",Math.floor((i/3))%2*40+20 + "%");
@@ -453,6 +459,28 @@
 
     d3.select("#condition_radio")
     .attr("x", "15%");
+
+    names = {{names | tojson}};
+    urls = {{urls | tojson}};
+
+    if(names.length > 0){
+      for(let i = 0; i < Math.min(6,names.length); i++){
+        d3.select("#blue_section").append('text')
+          .text(i+1 + ") " + names[i])
+          .attr("font-family", "Roboto")
+          .attr("font-size", "16px")
+          .attr("fill","gray")
+          .attr("x",i%3*30+5 + "%")
+          .attr("y",Math.floor((i/3))%2*40+20 + "%");
+
+        d3.select("#blue_section").append('image')
+          .attr('xlink:href', urls[i])
+          .attr('width', 200)
+          .attr('height', 200)
+          .attr('x', i%3*30+10 + "%")
+          .attr('y', Math.floor((i/3))%2*40+25 + "%");
+      }
+    }
 
     clicked = 1;
     setTimeout(function() { fill_blue(); }, 300);
