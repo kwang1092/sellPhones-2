@@ -154,7 +154,7 @@ transition: all 0.3s ease 0s;
 }
 
 .select-selected {
-  background-color: DodgerBlue;
+  background-color: gray;
 }
 
 /*style the arrow inside the select element:*/
@@ -188,7 +188,7 @@ transition: all 0.3s ease 0s;
 /*style items (options):*/
 .select-items {
   position: absolute;
-  background-color: DodgerBlue;
+  background-color: gray;
   top: 100%;
   left: 0;
   right: 0;
@@ -205,6 +205,10 @@ transition: all 0.3s ease 0s;
 }
 
 #budget_options{
-  left:18%;
-  margin-top:8%;
+  left:17.5%;
+  margin-top:65px;
+}
+
+#feature_options{
+  margin-top:65px;
 }
